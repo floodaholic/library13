@@ -1035,10 +1035,9 @@ do
             SyncToggleState = Info.SyncToggleState or false;
         };
 
-        if KeyPicker.SyncToggleState then
-            Info.Modes = { 'Toggle' }
-            Info.Mode = 'Toggle'
-        end
+     if KeyPicker.SyncToggleState then
+     Info.Mode = Info.Mode or 'Toggle'
+end
 
         local PickOuter = Library:Create('Frame', {
             BackgroundColor3 = Color3.new(0, 0, 0);
@@ -3714,4 +3713,5 @@ Players.PlayerAdded:Connect(OnPlayerChange);
 Players.PlayerRemoving:Connect(OnPlayerChange);
 
 getgenv().Library = Library
+
 return Library;
